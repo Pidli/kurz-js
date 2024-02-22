@@ -1,0 +1,21 @@
+.panel {
+    width: 100px;
+    height: 100px;
+    transition: all 1.5s ease-in-out;
+}
+
+.panel.cervena {
+    background-color: red;
+}
+
+.panel.modra {
+    background-color: blue;
+}
+
+.panel.zelena {
+    background-color: green;
+}
+
+.panel.active {
+    width: 100%;
+}

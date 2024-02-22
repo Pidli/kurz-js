@@ -1,0 +1,12 @@
+.panel {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-color: darksalmon;
+    transition: 1s all ease-in-out;
+}
+
+.panel.active {
+    width: 100%;
+    background-color:lightblue;
+}

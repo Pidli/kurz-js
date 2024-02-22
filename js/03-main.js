@@ -1,0 +1,1 @@
+console.log("Zprava je skryta v konzoli.");

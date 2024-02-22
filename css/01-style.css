@@ -1,0 +1,42 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    color: darkblue;
+}
+
+h1 {
+    font-size: 65px;
+    color: darkorange;
+}
+
+#kocka {
+    background-color: indianred;
+}
+
+.zlevneno {
+    color: lemonchiffon;
+    background-color: black;
+}
+
+.cerna .mys {
+    background-color: gray;
+    color: black;
+}
+
+.bila .mys {
+    background-color: gray;
+    color: white;
+}
+
+.banan.ananas {
+    background-color: sandybrown;
+}
+
+/* nastylujeme si div s classou kolecko */
+.kolecko {
+    height: 200px;
+    width: 200px;
+    background-color: skyblue;
+    border-radius: 50%;
+    opacity: 50%;
+    display: none;
+}

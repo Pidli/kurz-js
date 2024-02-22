@@ -1,0 +1,13 @@
+.panel {
+    height: 100px;
+    width: 100px;
+    background-color: cornflowerblue;
+    margin: 5px;
+    transition: all 2s ease-in-out;
+}
+
+/* tento selector je specifictejsi a proto bude mit vyssi prioritu */
+.panel.kocka {
+    width: 100%;
+    background-color: darkkhaki;
+}
