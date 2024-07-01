@@ -1,18 +1,18 @@
 const poleCisel = [51, 78, 41, 22, 4, -21, 17, 96, 82, -30];
-//originalni pole zustane nedotcene
-//funkce filter nam vrati nove pole
-//pokud arrow funkce vrati true, tak cislo vlozime do finalniho pole
-//pokud arrow funkce vrati false, tak se toto cislo do finalniho pole nedostane
-const vyfiltrovanoSudaCisla = poleCisel.filter((cislo) => {
-    if (cislo%2 == 0) {
-        return true;
-    }else{
-        return false;
-    }
-});
 
-console.log(poleCisel);
-console.log(vyfiltrovanoSudaCisla);
+const suma =  poleCisel.reduce((akumulator, cislo) => {
+    return akumulator + cislo;
+}, 0);
+console.log(suma);
+
+const sumaLichychCisel = poleCisel.reduce((akumulator, cislo) => {
+    if (cislo%2 == 1) {
+        return akumulator + cislo;
+    }else{
+        return akumulator;
+    }
+}, 0);
+
 
 
 const poleKurzu = [
@@ -60,13 +60,12 @@ const poleKurzu = [
     },
 ];
 
-const meneNez20 = poleKurzu.filter((kurzObjekt) => {
-    if (kurzObjekt.pocetStudentu < 20) {
-        return true;
-    }else{
-        return false;
-    }
-});
+const celkovaKapacitaKurzu = poleKurzu.reduce((akumulator, objektKurz) => {
+    return akumulator + objektKurz.pocetStudentu;
+}, 0);
+console.log(celkovaKapacitaKurzu);
 
-console.log(poleKurzu);
-console.log(meneNez20);
+const kategorieKurzu = poleKurzu.reduce((akumulator, objektKurz) => {
+    akumulator.akreditovany
+    akumulator.neakreditovany
+}, {});

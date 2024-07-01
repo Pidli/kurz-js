@@ -1,18 +1,17 @@
 const poleCisel = [51, 78, 41, 22, 4, -21, 17, 96, 82, -30];
-//originalni pole zustane nedotcene
-//funkce filter nam vrati nove pole
-//pokud arrow funkce vrati true, tak cislo vlozime do finalniho pole
-//pokud arrow funkce vrati false, tak se toto cislo do finalniho pole nedostane
-const vyfiltrovanoSudaCisla = poleCisel.filter((cislo) => {
-    if (cislo%2 == 0) {
-        return true;
-    }else{
-        return false;
-    }
-});
 
-console.log(poleCisel);
-console.log(vyfiltrovanoSudaCisla);
+// vrati se zaporne cislo: vezme cislo A a da ho pred cislo B
+// vrati se kladne cislo: vezme cislo B a da ho pred cislo A
+// vrati se cislo 0: nic se nestane
+const serazenePole = poleCisel.sort((cisloA, cisloB) => {
+    return cisloA - cisloB;
+});
+console.log(serazenePole);
+
+const odNejvyssiho = poleCisel.sort((cisloA, cisloB) => {
+    return cisloB - cisloA;
+});
+console.log(odNejvyssiho);
 
 
 const poleKurzu = [
@@ -60,13 +59,14 @@ const poleKurzu = [
     },
 ];
 
-const meneNez20 = poleKurzu.filter((kurzObjekt) => {
-    if (kurzObjekt.pocetStudentu < 20) {
-        return true;
+const serazenoPodleLektora = poleKurzu.sort((objektA, objektB) => {
+    if (objektA.lektor < objektB.lektor) {
+        return -1;
+    }else if (objektA.lektor > objektB.lektor){
+        return 1;
     }else{
-        return false;
+        return 0
     }
 });
 
-console.log(poleKurzu);
-console.log(meneNez20);
+console.log(serazenoPodleLektora);

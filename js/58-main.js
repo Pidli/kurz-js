@@ -1,18 +1,22 @@
 const poleCisel = [51, 78, 41, 22, 4, -21, 17, 96, 82, -30];
-//originalni pole zustane nedotcene
-//funkce filter nam vrati nove pole
-//pokud arrow funkce vrati true, tak cislo vlozime do finalniho pole
-//pokud arrow funkce vrati false, tak se toto cislo do finalniho pole nedostane
-const vyfiltrovanoSudaCisla = poleCisel.filter((cislo) => {
-    if (cislo%2 == 0) {
-        return true;
-    }else{
-        return false;
-    }
+
+const druhaMocnina = poleCisel.map((cislo) => {
+    return cislo * cislo;
 });
 
 console.log(poleCisel);
-console.log(vyfiltrovanoSudaCisla);
+console.log(druhaMocnina);
+
+//pokud je cislo sude tak pricteme 10
+//pokud je cislo liche tka pricteme 5
+const novePole = poleCisel.map((cislo) => {
+    if (cislo%2 == 0) {
+        return cislo + 10;
+    }else{
+        return cislo + 5;
+    }
+});
+console.log(novePole);
 
 
 const poleKurzu = [
@@ -60,13 +64,18 @@ const poleKurzu = [
     },
 ];
 
-const meneNez20 = poleKurzu.filter((kurzObjekt) => {
-    if (kurzObjekt.pocetStudentu < 20) {
-        return true;
+//navysime kapacitu kurzu, ktere jsou akreditovane o 10 mist
+//objekty a pole jsou ukladany referenci!!!
+//pokud ve funkci map menite vlastnosti objektu tak se zmeni i hodnota originalniho objektu
+const novePoleKurzu = poleKurzu.map((kurzObjekt) =>  {
+    if (kurzObjekt.jeAkreditovany) {
+        kurzObjekt.pocetStudentu += 10;
+        return kurzObjekt;
     }else{
-        return false;
+        return kurzObjekt;
     }
 });
 
+//toto pole jsou uplne stejne ikdyz se jedna o kopii a original
 console.log(poleKurzu);
-console.log(meneNez20);
+console.log(novePoleKurzu);
